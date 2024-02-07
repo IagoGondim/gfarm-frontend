@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="icon" href="../img/GFarmIcon.png" />
+  <meta charset="UTF-8">
+  <title>GFarm</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <section class="container">
+    <section class="sidebar">
+      <div class="userInfo">
+        <h3>Fazenda Boa Vista</h3>
+        <span>email@email.com</span>
+      </div>
+      <div class="menuSidebar">
+        <a href="#" onclick="openModal()">Cadastrar Fazenda</a>
+        <a style="opacity: 0.5;">Cadastrar funcionarios</a>
+        <a style="opacity: 0.5;">Inserir insumos</a>
+        <a style="opacity: 0.5;">Realizar correção de solo</a>
+        <a style="opacity: 0.5;">Inserir atividades</a>
+        <a style="opacity: 0.5;">Inserir equipamentos</a>
+        <a class="register">Já possui uma Conta? <a href="login.html">Realize o login aqui</a></a>
+      </div>
+    </section>
+    <div class="containerWrapper">
+      <section class="infoContainer">GFarm</section>
+      <section class="graficosContainer">Graficos</section>
+    </div>
+  </section>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <script>
+    function openModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "block";
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          document.getElementById("modalContent").innerHTML = xhr.responseText;
+
+          var registerForm = document.getElementById("registerForm");
+          if (registerForm) {
+            registerForm.addEventListener("submit", function (event) {
+              event.preventDefault();
+
+              var nome = document.getElementById("nome").value;
+              var areaTotal = document.getElementById("areaTotal").value;
+              var logradouro = document.getElementById("logradouro").value;
+              var numero = document.getElementById("numero").value;
+              var bairro = document.getElementById("bairro").value;
+              var cidade = document.getElementById("cidade").value;
+
+              var formData = {
+                nome: nome,
+                areaTotal: parseInt(areaTotal),
+                endereco: {
+                  logradouro: logradouro,
+                  numero: parseInt(numero),
+                  bairro: bairro,
+                  cidade: cidade
+                }
+              };
+
+              var token = localStorage.getItem('token');
+              console.log(formData);
+              console.log(token);
+              fetch('http://localhost:8080/usuario/fazendas', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify(formData)
+              })
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error('Erro ao cadastrar fazenda. Por favor, tente novamente.');
+                  }
+                  return response.json();
+                })
+                .then(data => {
+                  console.log('Fazenda cadastrada com sucesso:', data);
+                  alert('Fazenda cadastrada com sucesso!');
+                  closeModal();
+                })
+                .catch(error => {
+                  console.error('Erro ao cadastrar fazenda:', error.message);
+                  alert(error.message);
+                });
+            });
+          }
+        }
+      };
+      xhr.open("GET", "../html/modalContent.html", true);
+      xhr.send();
+    }
+
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
