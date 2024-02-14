@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" href="../img/GFarmIcon.png" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/modal.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+  <div class="ModalFuncionario">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="FuncionarioCadastro">
+    <div class="mdi--account-group-outline"></div>
+    <h2>Cadastrar Funcionário</h2>
+  </div>
+  <form id="registerForm">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br>
+    <label for="cargo">Cargo:</label><br>
+    <input type="text" id="cargo" name="cargo" required><br>
+    <label for="salario">Salário:</label><br>
+    <input type="number" id="salario" name="salario" required><br>
+    <label for="dataContratacao">Data De Contratação:</label><br>
+    <input type="datetime" id="dataContratacao" name="dataContratacao" required disabled><br><br>
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>
+</body>
+
+</html>

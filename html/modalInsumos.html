@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" href="../img/GFarmIcon.png" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/modal.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+  <div class="ModalInsumo">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="InsumoCadastro">
+    <div class="mdi--account-file-text"></div>
+    <h2>Inserir Insumo</h2>
+  </div>
+  <form id="registerForm">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br>
+    <label for="role">Escolha o Tipo:</label>
+      <select id="role" name="role">
+        <option value="QUIMICOS">Químico</option>
+        <option value="BIOLOGICOS">Biológico</option>
+      </select><br><br>
+    <label for="quantidadeDisponivel">Quantidade Disponível:</label><br>
+    <input type="quantidadeDisponivel" id="quantidadeDisponivel" name="quantidadeDisponivel" required><br>
+    <label for="precoUnitario">Preço Unitário:</label><br>
+    <input type="precoUnitario" id="precoUnitario" name="precoUnitario" required><br><br>
+    <button type="submit">Inserir</button>
+  </form>
+</div>
+</body>
+
+</html>

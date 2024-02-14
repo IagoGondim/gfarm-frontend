@@ -1,5 +1,5 @@
 :root{
-  --bg-sidebar-color: rgb(100, 153, 100);
+  --bg-sidebar-color: rgb(78, 134, 86);
   --bg-content-color: #fff;
   --bg-grafico-color: #eeeded;
   --font-active-color: #fff;
@@ -23,10 +23,12 @@ a{
   width: 100%;
   display: flex;
   justify-content: center;
+  /* margin: -350px 0 0 -5px */
 }
 
 .Logo img{
   width: 80%;
+  cursor: pointer;
 }
 
 .container{
@@ -45,7 +47,6 @@ a{
 row-gap: 1rem;
   height: 100vh;
   align-items: center;
-  justify-content: center;
   display: flex;
   flex-direction: column;
 }
@@ -61,8 +62,8 @@ row-gap: 1rem;
 }
 
 .containerWrapper{
-  gap: 100px;
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   align-items: center;
@@ -72,20 +73,89 @@ row-gap: 1rem;
 
 .infoContainer{
 /* background: var(--bg-content-color); */
-width: 100%;
-height: 100vh;
+-webkit-box-shadow: 0px 1px 6px 2px rgba(126, 125, 125, 0.75);
+  -moz-box-shadow: 0px 1px 6px 2px rgba(126, 125, 125, 0.75);
+  box-shadow: 0px 1px 6px 2px rgba(126, 125, 125, 0.75);
+  border: 2px solid rgb(39, 39, 39);
+  border-radius: 25px;
+margin: 1%;
+width: 50%;
 align-items: center;
 justify-content: center;
 display: flex;
 flex-direction: column;
 }
 
+.info{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.acoes{
+  justify-content: center;
+  align-items: center;
+}
+
 .graficosContainer{
 /* background: var(--bg-grafico-color); */
-width: 600px;
-height: 100vh;
+margin: 1%;
+width: 50%;
 align-items: center;
 justify-content: center;
 display: flex;
 flex-direction: column;
+}
+
+.graficosContainer>div{
+  height: 50%;
+  width: 100%;
+  -webkit-box-shadow: 0px 1px 6px 2px rgba(126, 125, 125, 0.75);
+  -moz-box-shadow: 0px 1px 6px 2px rgba(126, 125, 125, 0.75);
+  box-shadow: 0px 1px 6px 2px rgba(126, 125, 125, 0.75);
+  border: 2px solid rgb(39, 39, 39);
+  border-radius: 25px;
+  text-align: center;
+}
+
+.grafico1{
+  margin-bottom: 3.5%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #5f965f;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #528052;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+.NomeFazenda p {
+  font-size: 1.25rem;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 14px;
+  color: #fff;
 }
