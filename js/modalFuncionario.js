@@ -5,12 +5,8 @@ function openModalFuncionario() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        const data = new Date();
-        const options = { timeZone: 'America/Sao_Paulo' };
-        const dataHoraBrasil = data.toLocaleString('pt-BR', options);
 
         document.getElementById("modalContent").innerHTML = xhr.responseText;
-        document.getElementById('dataContratacao').defaultValue = dataHoraBrasil;
 
         var registerForm = document.getElementById("registerForm");
         if (registerForm) {

@@ -13,27 +13,19 @@ function openModalEquipamento() {
             event.preventDefault();
 
             var nome = document.getElementById("nome").value;
-            var areaTotal = document.getElementById("areaTotal").value;
-            var logradouro = document.getElementById("logradouro").value;
-            var numero = document.getElementById("numero").value;
-            var bairro = document.getElementById("bairro").value;
-            var cidade = document.getElementById("cidade").value;
+            var descricao = document.getElementById("descricao").value;
+            var dataDeCompra = document.getElementById("dataDeCompra").value;
 
             var formData = {
               nome: nome,
-              areaTotal: parseInt(areaTotal),
-              endereco: {
-                logradouro: logradouro,
-                numero: parseInt(numero),
-                bairro: bairro,
-                cidade: cidade
-              }
+              descricao: descricao,
+              dataDeCompra: dataDeCompra
             };
 
             var token = localStorage.getItem('token');
             console.log(formData);
             console.log(token);
-            fetch('http://localhost:8080/usuario/fazendas', {
+            fetch('http://localhost:8080/usuario/equipamentos', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -43,17 +35,17 @@ function openModalEquipamento() {
             })
               .then(response => {
                 if (!response.ok) {
-                  throw new Error('Erro ao cadastrar fazenda. Por favor, tente novamente.');
+                  throw new Error('Erro ao inserir equipamento. Por favor, tente novamente.');
                 }
                 return response.json();
               })
               .then(data => {
-                console.log('Fazenda cadastrada com sucesso:', data);
-                alert('Fazenda cadastrada com sucesso!');
+                console.log('Equipamento inserido com sucesso:', data);
+                alert('Equipamento inserido com sucesso!');
                 closeModal();
               })
               .catch(error => {
-                console.error('Erro ao cadastrar fazenda:', error.message);
+                console.error('Erro ao inserir equipamento:', error.message);
                 alert(error.message);
               });
           });
