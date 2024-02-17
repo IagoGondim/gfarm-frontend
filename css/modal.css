@@ -38,18 +38,18 @@
   cursor: pointer;
 }
 
-label {
+.ModalConteudo label {
   margin-bottom: 5px;
 }
 
-input {
+.ModalConteudo input {
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-button {
+.ModalConteudo button {
   width: 100%;
   padding: 10px 20px;
   background-color: #4CAF50;
@@ -59,11 +59,11 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.ModalConteudo button:hover {
   background-color: #45a049;
 }
 
-button:disabled {
+.ModalConteudo button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
