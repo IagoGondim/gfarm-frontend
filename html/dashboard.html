@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="icon" href="../img/GFarmIcon.png" />
+  <meta charset="UTF-8">
+  <title>GFarm</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+  <script type="text/javascript" src="../js/modalFazenda.js"></script>
+  <script type="text/javascript" src="../js/modalFuncionario.js"></script>
+  <script type="text/javascript" src="../js/modalInsumo.js"></script>
+  <script type="text/javascript" src="../js/modalAtividade.js"></script>
+  <script type="text/javascript" src="../js/modalEquipamento.js"></script>
+</head>
+
+<body>
+  <section class="container">
+    <aside class="sidebar">
+      <div class="Logo">
+        <img src="../img/GFarmLogo.png" alt="Logotipo">
+      </div>
+      <div class="userInfo">
+        <h3>Usuario</h3>
+      </div>
+      <nav class="menuSidebar">
+        <a href="#" onclick="openModalFuncionario()">Cadastrar Funcionarios</a>
+        <a style="opacity: 0.5;">Realizar correção de solo</a>
+        <a href="#" onclick="openModalInsumo()">Inserir Insumos</a>
+        <a href="#" onclick="openModalAtividade()">Inserir Atividades</a>
+        <a href="#" onclick="openModalEquipamento()">Inserir Equipamentos</a><br>
+        <a class="register">Já possui uma Conta? <a href="login.html">Realize o login aqui</a></a>
+      </nav>
+    </aside>
+    <div class="containerWrapper">
+      <ul class="Nav">
+        <div class="NomeFazenda">
+          <li><p>NomeFazenda</p></li>
+        </div>
+        <div class="Acoes">
+          <li><a href="#" onclick="openModalFazenda()">Cadastrar Fazenda</a></li>
+        </div>
+      </ul>
+    <div class="info">
+      <section class="infoContainer">
+        <div class="content">
+          <div id="text1">
+            <div class="card">
+              <img src="../img/BannerFazenda.jpg" alt="ImagemCard">
+              <div class="card-content">
+                  <h2>Fazenda Boa Vista</h2>
+                  <p>Área Total da Fazenda: 96,8 hectares</p>
+                  <p>Logradouro da Fazenda: Travessa do Rio Sereno</p>
+                  <p>Número da Fazenda: 1728</p>
+                  <p>Bairro: Rio Vivo do Sul</p>
+                  <p>Cidade: Blumenau</p>
+              </div>
+            </div>
+          </div>
+          <div id="text2" class="hidden">
+            <div class="card">
+              <img src="../img/BannerUsuario.jpg" alt="ImagemCard">
+              <div class="card-content">
+                  <h2>Usuário João Pasco</h2>
+                  <p>Nome Completo: João Pasco Oliveira</p>
+                  <p>Cargo: Admin</p>
+                  <p>Salário: 3000$ Por Mês</p>
+                  <p>Data De Contratação: 10/15/2024</p>
+              </div>
+            </div>
+          </div>
+          <div id="text3" class="hidden">
+            GFarm3
+          </div>
+          <div id="text4" class="hidden">
+            GFarm4
+          </div>
+          <div id="text5" class="hidden">
+            GFarm5
+          </div>
+        </div>
+        <button onclick="swap()">Próximo</button>
+      </section>
+      <section class="graficosContainer">
+        <div class="grafico1">
+          <div id="anatomy-simple-chart">
+            <table class="charts-css column show-heading show-labels show-primary-axis show-3-secondary-axes show-data-axes data-spacing-15 hide-data">
+              <caption class="TituloInsumo"><b>Insumos</b></caption>
+               <thead>
+                <tr>
+                  <th scope="col"> Insumo </th> 
+                  <th scope="col"> Value </th>
+                </tr>
+              </thead>
+              
+              <tbody>
+                  <tr>
+                   <th> Pesticidas </th>
+                   <td style="--size: calc( 187 / 187 ); --color: #6ad7f8;"> 187 </td>
+                  </tr>
+                  <tr>
+                   <th> Biopesticida </th>
+                   <td style="--size: calc( 104 / 187 ); --color: #70d370;"> 104 </td>
+                  </tr> 
+                  <tr>
+                   <th> Fertilizantes </th>
+                   <td style="--size: calc( 86 / 187 ); --color: #6ad7f8;"> 86 </td>
+                  </tr>
+                  <tr>
+                   <th> Neem Oil </th>
+                   <td style="--size: calc( 75 / 187 ); --color: #70d370;"> 75 </td>
+                  </tr>
+                </tbody>
+                <ul class="charts-css legend legend-square">
+                  <li> Químico </li>
+                  <li> Biológico </li>
+                </ul>
+              </table>
+            </div>
+        </div>
+        <div class="grafico2">
+          <form id="search">
+            <i class="mdi--location-on-outline"></i>
+            <input 
+                type="search" 
+                name="city_name" 
+                id="city_name" 
+                placeholder="Buscar cidade"
+            >
+            <button type="submit">
+                <i class="mdi--magnify"></i>
+            </button>
+        </form>
+        <div id="weather">
+          <div id="infos">
+              <div id="temp">
+
+                  <img id="temp_img" src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
+                  
+                  <div>
+                      <p id="temp_value">
+                          32 
+                      </p>
+                      <p id="temp_description">
+                          Ensolarado
+                      </p>
+                  </div>
+                  <h1 id="title">Cidade, BR</h1>
+              </div>
+
+              <div id="other_infos">
+                  <div class="info">
+                      <i id="temp_max_icon" class="mdi--temperature-chevron-up"></i>
+
+                      <div>
+                          <h2>Temp. max</h2>
+
+                          <p id="temp_max">
+                              32 <sup>C°</sup>
+                          </p>
+                      </div>
+                  </div>
+
+                  <div class="info">
+                      <i id="temp_min_icon" class="mdi--temperature-chevron-down"></i>
+
+                      <div>
+                          <h2>Temp. min</h2>
+
+                          <p id="temp_min">
+                              12 <sup>C°</sup>
+                          </p>
+                      </div>
+                  </div>
+
+                  <div class="info">
+                      <i id="humidity_icon" class="mdi--water"></i>
+
+                      <div>
+                          <h2>Humidade</h2>
+
+                          <p id="humidity">
+                              50%
+                          </p>
+                      </div>
+                  </div>
+
+                  <div class="info">
+                      <i id="wind_icon" class="mdi--weather-windy"></i>
+
+                      <div>
+                          <h2>Vento</h2>
+
+                          <p id="wind">
+                              50 km/h
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div id="alert"></div>
+      </section>
+
+    </div>
+    </div>
+  </section>
+
+  <script src="../js/clima.js"></script>
+  <script type="text/javascript" src="../js/mudarPagina.js"></script>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</body>
+
+</html>

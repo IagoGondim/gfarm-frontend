@@ -1,0 +1,91 @@
+body {
+    background: linear-gradient(to right, #f9fafa, #e3fbfc);
+    margin: 0;
+    font-family:sans-serif; 
+}
+
+.green-square {
+    background: linear-gradient(to right, #e7fae8, #a9f7c0);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.LoginPainel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0% !important;
+    padding-bottom: 5% !important;
+}
+
+.LoginTela {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LoginTela button{
+    width: 100%;
+    line-height: 66%;
+    background-color: #c4f5d2;
+    outline: auto;
+    outline-color: rgb(90, 83, 83);
+}
+
+.Logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Logo img{
+    width: 41%;
+}
+
+.LoginTela button:hover{
+    background-color: #a6dab5;
+}
+
+.LoginTela button:focus{
+    outline: auto !important;
+    outline-color: rgb(90, 83, 83);
+}
+
+.Email {
+    padding: 6px 10px;
+}
+
+.pswrd {
+    padding: 6px 10px;
+}
+
+button {
+    padding: 14px 10px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .green-square {
+        height: 50vh;
+    }
+}
+
+h3 {text-align: center;}
+p {text-align: center;}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" href="../img/GFarmIcon.png" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/modal.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+  <div class="ModalConteudo">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="EquipamentoRegistro">
+    <div class="mdi--toolbox-outline"></div>
+    <h2>Inserir Equipamento</h2>
+  </div>
+  <form id="registerForm">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br>
+    <label for="descricao">Descrição:</label><br>
+    <input type="text" id="descricao" name="descricao" required><br>
+    <label for="dataDeCompra">Data De Compra:</label><br>
+    <input type="datetime" id="dataDeCompra" name="dataDeCompra" required><br><br>
+    <button type="submit">Inserir</button>
+  </form>
+</div>
+</body>
+
+</html>

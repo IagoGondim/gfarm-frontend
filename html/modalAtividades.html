@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" href="../img/GFarmIcon.png" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/modal.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+  <div class="ModalConteudo">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="AtividadeRegistro">
+    <div class="mdi--account-edit"></div>
+    <h2>Inserir Atividade</h2>
+  </div>
+  <form id="registerForm">
+    <label for="titulo">Título:</label><br>
+    <input type="text" id="titulo" name="titulo" required><br>
+    <label for="descricao">Descrição da Atividade:</label><br>
+    <input type="text" id="descricao" name="descricao" required><br>
+    <label for="dataDeAtividade">Data De Atividade:</label><br>
+    <input type="datetime" id="dataDeAtividade" name="dataDeAtividade" required disabled><br><br>
+    <button type="submit">Criar</button>
+  </form>
+</div>
+</body>
+
+</html>
