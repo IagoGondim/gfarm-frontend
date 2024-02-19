@@ -84,12 +84,14 @@ align-items: center;
 justify-content: space-between;
 display: flex;
 flex-direction: column;
+background-color: white;
 }
 
 .info{
   width: 100%;
   height: 100%;
   display: flex;
+  background-color: #c6ebc8;
 }
 
 .acoes{
@@ -116,6 +118,7 @@ flex-direction: column;
   border: 2px solid rgb(39, 39, 39);
   border-radius: 25px;
   text-align: center;
+  background-color: white;
 }
 
 .grafico1{
@@ -128,7 +131,7 @@ flex-direction: column;
   background: linear-gradient(0deg, rgba(255,255,255,1) 67%, rgba(244,221,127,1) 89%, rgba(255,211,135,1) 100%);
 }
 
-ul {
+.Nav {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
@@ -185,6 +188,69 @@ li a:hover:not(.active) {
   padding: 5%;
   font-size: 20px;
   align-items: baseline;
+}
+
+#anatomy-simple-chart {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#anatomy-simple-chart .charts-css {
+  --aspect-ratio: 2 / 0.97;
+}
+
+#anatomy-simple-chart .legend {
+  margin-block-start: 1rem;
+  justify-content: left;
+  float: left;
+  display: left;
+  --color-1: #6ad7f8;
+  --color-2: #70d370;
+  padding: 5px;
+}
+
+.TituloInsumo {
+  font-size: 18px;
+}
+
+.card {
+  max-width: 460px;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 1px 6px 2px rgba(126, 125, 125, 0.75);
+  -moz-box-shadow: 0px 1px 6px 2px rgba(126, 125, 125, 0.75);
+  box-shadow: 0px 1px 6px 2px rgba(126, 125, 125, 0.75);
+}
+
+.card img {
+  width: 460px;
+  height: 190px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 16px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .containerWrapper {
+      max-width: 100%;
+  }
+  :root {
+    --font-size: 20px;
+  }
 }
 
 /*STYLE DA API*/

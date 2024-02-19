@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <title>GFarm</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
   <script type="text/javascript" src="../js/modalFazenda.js"></script>
   <script type="text/javascript" src="../js/modalFuncionario.js"></script>
   <script type="text/javascript" src="../js/modalInsumo.js"></script>
@@ -32,7 +33,7 @@
       </nav>
     </aside>
     <div class="containerWrapper">
-      <ul>
+      <ul class="Nav">
         <div class="NomeFazenda">
           <li><p>NomeFazenda</p></li>
         </div>
@@ -44,10 +45,29 @@
       <section class="infoContainer">
         <div class="content">
           <div id="text1">
-            GFarm1
+            <div class="card">
+              <img src="../img/BannerFazenda.jpg" alt="ImagemCard">
+              <div class="card-content">
+                  <h2>Fazenda Boa Vista</h2>
+                  <p>Área Total da Fazenda: 96,8 hectares</p>
+                  <p>Logradouro da Fazenda: Travessa do Rio Sereno</p>
+                  <p>Número da Fazenda: 1728</p>
+                  <p>Bairro: Rio Vivo do Sul</p>
+                  <p>Cidade: Blumenau</p>
+              </div>
+            </div>
           </div>
           <div id="text2" class="hidden">
-            GFarm2
+            <div class="card">
+              <img src="../img/BannerUsuario.jpg" alt="ImagemCard">
+              <div class="card-content">
+                  <h2>Usuário João Pasco</h2>
+                  <p>Nome Completo: João Pasco Oliveira</p>
+                  <p>Cargo: Admin</p>
+                  <p>Salário: 3000$ Por Mês</p>
+                  <p>Data De Contratação: 10/15/2024</p>
+              </div>
+            </div>
           </div>
           <div id="text3" class="hidden">
             GFarm3
@@ -63,7 +83,40 @@
       </section>
       <section class="graficosContainer">
         <div class="grafico1">
-          Grafico1
+          <div id="anatomy-simple-chart">
+            <table class="charts-css column show-heading show-labels show-primary-axis show-3-secondary-axes show-data-axes data-spacing-15 hide-data">
+              <caption class="TituloInsumo"><b>Insumos</b></caption>
+               <thead>
+                <tr>
+                  <th scope="col"> Insumo </th> 
+                  <th scope="col"> Value </th>
+                </tr>
+              </thead>
+              
+              <tbody>
+                  <tr>
+                   <th> Pesticidas </th>
+                   <td style="--size: calc( 187 / 187 ); --color: #6ad7f8;"> 187 </td>
+                  </tr>
+                  <tr>
+                   <th> Biopesticida </th>
+                   <td style="--size: calc( 104 / 187 ); --color: #70d370;"> 104 </td>
+                  </tr> 
+                  <tr>
+                   <th> Fertilizantes </th>
+                   <td style="--size: calc( 86 / 187 ); --color: #6ad7f8;"> 86 </td>
+                  </tr>
+                  <tr>
+                   <th> Neem Oil </th>
+                   <td style="--size: calc( 75 / 187 ); --color: #70d370;"> 75 </td>
+                  </tr>
+                </tbody>
+                <ul class="charts-css legend legend-square">
+                  <li> Químico </li>
+                  <li> Biológico </li>
+                </ul>
+              </table>
+            </div>
         </div>
         <div class="grafico2">
           <form id="search">
