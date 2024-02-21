@@ -1,5 +1,5 @@
 const cityName = document.querySelector('#city_name')
-cityName.value="Blumenau"
+cityName.value="Egito"
     preSetCity()
 document.querySelector('#search').addEventListener('submit', async (event) => {
     event.preventDefault();

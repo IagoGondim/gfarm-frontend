@@ -5,13 +5,13 @@ function openModalAtividade() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        const data = new Date();
+        const date = new Date();
         const options = { timeZone: 'America/Sao_Paulo' };
-        const dataHoraBrasil = data.toLocaleString('pt-BR', options);
+        const dataHoraBrasil = date.toLocaleString('pt-BR');
   
         document.getElementById("modalContent").innerHTML = xhr.responseText;
         // document.getElementById('dataDeAtividade').defaultValue = new Date().toISOString().substring(0, 10);
-        document.getElementById('dataDeAtividade').defaultValue = dataHoraBrasil;
+        document.getElementById('data').value = getDataAtual();
 
         var registerForm = document.getElementById("registerForm");
         if (registerForm) {
@@ -20,12 +20,14 @@ function openModalAtividade() {
 
             var titulo = document.getElementById("titulo").value;
             var descricao = document.getElementById("descricao").value;
-            var dataDeAtividade = document.getElementById("dataDeAtividade").value;
+            var data = document.getElementById("data").value;
+            var hora = document.getElementById("hora").value;
 
             var formData = {
               titulo: titulo,
               descricao: descricao,
-              dataDeAtividade: dataDeAtividade
+              data: data,
+              hora: hora
             };
 
             var token = localStorage.getItem('token');
@@ -66,3 +68,11 @@ function openModalAtividade() {
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
   }
+
+  function getDataAtual() {
+    var dataAtual = new Date();
+    var dia = String(dataAtual.getDate()).padStart(2, '0');
+    var mes = String(dataAtual.getMonth() + 1).padStart(2, '0');
+    var ano = String(dataAtual.getFullYear()).slice(-2); // Pegando os dois últimos dígitos do ano
+    return dia + '/' + mes + '/' + ano;
+}
