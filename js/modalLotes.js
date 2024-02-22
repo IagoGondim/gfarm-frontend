@@ -54,7 +54,7 @@ function openModalLote() {
         }
       }
     };
-    xhr.open("GET", "../html/modalEquipamentos.html", true);
+    xhr.open("GET", "../html/modalLotes.html", true);
     xhr.send();
   }
   
