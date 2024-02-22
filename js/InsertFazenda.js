@@ -31,6 +31,26 @@ function fetchAndCreateCard() {
         var text1Div = document.getElementById('text1');
         text1Div.innerHTML = ''; // Limpar qualquer conteúdo anterior
         text1Div.appendChild(newCard);
+
+        let html= `
+          <li><p>${data[0]?.nome}</p></li>
+        `;
+
+        var FazendaNome = document.getElementById('NomeFazenda');
+        console.log(FazendaNome)
+        FazendaNome.innerHTML = html; // Limpar qualquer conteúdo anterior
+
+        let user= `
+        <h3>${data[0]?.usuario?.nome}</h3>
+        `;
+
+        var UserNome = document.getElementById('userInfo');
+        console.log(UserNome)
+        UserNome.innerHTML = user; // Limpar qualquer conteúdo anterior
+
+        const cityName = document.querySelector('#city_name')
+        cityName.value=`${data[0]?.endereco?.cidade}`
+        preSetCity()
       })
       .catch(error => console.error('Erro:', error));
   }
