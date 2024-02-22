@@ -21,7 +21,7 @@
       <div class="Logo">
         <img src="../img/GFarmLogo.png" alt="Logotipo">
       </div>
-      <div class="userInfo">
+      <div class="userInfo" id="userInfo">
         <h3>Usuario</h3>
       </div>
       <nav class="menuSidebar">
@@ -36,7 +36,7 @@
     </aside>
     <div class="containerWrapper">
       <ul class="Nav">
-        <div class="NomeFazenda">
+        <div class="NomeFazenda" id="NomeFazenda">
           <li><p>NomeFazenda</p></li>
         </div>
         <div class="Acoes">
@@ -60,25 +60,12 @@
             </div>
           </div>
           <div id="text2" class="hidden">
-            <div class="card">
-              <img src="../img/BannerUsuario.jpg" alt="ImagemCard">
-              <div class="card-content">
-                  <h2>Usuário João Pasco</h2>
-                  <p>Nome Completo: João Pasco Oliveira</p>
-                  <p>Cargo: Admin</p>
-                  <p>Salário: 3000$ Por Mês</p>
-                  <p>Data De Contratação: 10/15/2024</p>
-              </div>
-            </div>
           </div>
           <div id="text3" class="hidden">
             GFarm3
           </div>
           <div id="text4" class="hidden">
             GFarm4
-          </div>
-          <div id="text5" class="hidden">
-            GFarm5
           </div>
         </div>
         <button onclick="swap()">Próximo</button>
@@ -96,22 +83,22 @@
               </thead>
               
               <tbody>
-                  <tr>
-                   <th> Pesticidas </th>
-                   <td style="--size: calc( 187 / 187 ); --color: #6ad7f8;"> 187 </td>
-                  </tr>
-                  <tr>
-                   <th> Biopesticida </th>
-                   <td style="--size: calc( 104 / 187 ); --color: #70d370;"> 104 </td>
-                  </tr> 
-                  <tr>
-                   <th> Fertilizantes </th>
-                   <td style="--size: calc( 86 / 187 ); --color: #6ad7f8;"> 86 </td>
-                  </tr>
-                  <tr>
-                   <th> Neem Oil </th>
-                   <td style="--size: calc( 75 / 187 ); --color: #70d370;"> 75 </td>
-                  </tr>
+                <tr>
+                  <th> Pesticidas </th>
+                  <td style="--size: calc( 187 / 187 ); --color: #6ad7f8;"> 187 </td>
+                 </tr>
+                 <tr>
+                  <th> Biopesticida </th>
+                  <td style="--size: calc( 104 / 187 ); --color: #70d370;"> 104 </td>
+                 </tr> 
+                 <tr>
+                  <th> Fertilizantes </th>
+                  <td style="--size: calc( 86 / 187 ); --color: #6ad7f8;"> 86 </td>
+                 </tr>
+                 <tr>
+                  <th> Neem Oil </th>
+                  <td style="--size: calc( 75 / 187 ); --color: #70d370;"> 75 </td>
+                 </tr>
                 </tbody>
                 <ul class="charts-css legend legend-square">
                   <li> Químico </li>
@@ -210,6 +197,8 @@
 
   <script src="../js/clima.js"></script>
   <script type="text/javascript" src="../js/mudarPagina.js"></script>
+  <script type="text/javascript" src="../js/InsertFazenda.js"></script>
+  <script type="text/javascript" src="../js/InsertFuncionario.js"></script>
 
   <div id="myModal" class="modal">
     <div class="modal-content" id="modalContent"></div>

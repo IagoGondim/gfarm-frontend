@@ -1,6 +1,3 @@
-const cityName = document.querySelector('#city_name')
-cityName.value="Blumenau"
-    preSetCity()
 document.querySelector('#search').addEventListener('submit', async (event) => {
     event.preventDefault();
     await preSetCity()
@@ -64,3 +61,4 @@ async function preSetCity(){
         `)
     }
 };
+window.preSetCity = preSetCity
