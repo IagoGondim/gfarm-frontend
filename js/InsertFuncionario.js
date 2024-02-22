@@ -4,7 +4,7 @@ function fetchAndCreateCard() {
             fetch('http://localhost:8080/usuario/funcionarios', {
               method: 'GET',
               headers: {
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer' + token
               },
             })
       .then(response => {return response.json();})
@@ -30,7 +30,7 @@ function fetchAndCreateCard() {
             var text2Div = document.getElementById('text2');
             text2Div.appendChild(newCard);
         }
-        console.log(data)
+        console.log(data);
         // Criar um novo elemento de card
       })
       .catch(error => console.error('Erro:', error));

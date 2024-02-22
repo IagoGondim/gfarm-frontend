@@ -4,6 +4,7 @@ function fetchAndCreateCard() {
             fetch('http://localhost:8080/usuario/fazendas', {
               method: 'GET',
               headers: {
+                'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + token
               },
             })
