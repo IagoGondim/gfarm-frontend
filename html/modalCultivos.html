@@ -11,19 +11,17 @@
 <body>
   <div class="ModalConteudo">
   <span class="close" onclick="closeModal()">&times;</span>
-  <div class="LoteRegistro">
-    <div class="iconoir--farm"></div>
-    <h2>Inserir Lote</h2>
+  <div class="CultivoRegistro">
+    <div class="mdi--farm"></div>
+    <h2>Inserir Cultivo</h2>
   </div>
   <form id="registerForm">
     <label for="nome">Nome:</label><br>
     <input type="text" id="nome" name="nome" required><br>
-    <label for="areaTotalLote">Área Total do Lote:</label><br>
-    <input type="number" id="areaTotalLote" name="areaTotalLote" required><br>
-    <label for="tipoDeSolo">Tipo de Solo:</label><br>
-    <input type="text" id="tipoDeSolo" name="tipoDeSolo" required><br>
-    <label for="fazendaId">ID da Fazenda:</label><br>
-    <input type="number" id="fazendaId" name="fazendaId" required><br><br>
+    <label for="dataDePlantio">Data De Plantio:</label><br>
+    <input type="date" id="dataDePlantio" name="dataDePlantio" required><br>
+    <label for="dataColheitaPrevista">Data De Colheita Prevista:</label><br>
+    <input type="date" id="dataColheitaPrevista" name="dataColheitaPrevista" required><br><br>
     <button type="submit">Inserir</button>
   </form>
 </div>
