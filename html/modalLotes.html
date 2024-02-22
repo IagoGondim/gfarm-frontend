@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" href="../img/GFarmIcon.png" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/modal.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+  <div class="ModalConteudo">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="LoteRegistro">
+    <div class="mdi--toolbox-outline"></div>
+    <h2>Inserir Lote</h2>
+  </div>
+  <form id="registerForm">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br>
+    <label for="areaTotalLote">Área Total do Lote:</label><br>
+    <input type="number" id="areaTotalLote" name="areaTotalLote" required><br>
+    <label for="tipoDeSolo">Tipo de Solo:</label><br>
+    <input type="text" id="tipoDeSolo" name="tipoDeSolo" required><br>
+    <label for="fazendaId">ID da Fazenda:</label><br>
+    <input type="number" id="fazendaId" name="fazendaId" required><br><br>
+    <button type="submit">Inserir</button>
+  </form>
+</div>
+</body>
+
+</html>
