@@ -15,11 +15,13 @@ function openModalEquipamento() {
             var nome = document.getElementById("nome").value;
             var descricao = document.getElementById("descricao").value;
             var dataDeCompra = document.getElementById("dataDeCompra").value;
+            var fazendaId = localStorage.getItem("fazendaId");
 
             var formData = {
               nome: nome,
               descricao: descricao,
-              dataDeCompra: dataDeCompra
+              dataDeCompra: dataDeCompra,
+              fazendaId: fazendaId
             };
 
             var token = localStorage.getItem('token');

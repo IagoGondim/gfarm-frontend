@@ -1,7 +1,7 @@
 function fetchAndCreateCard() {
     var token = localStorage.getItem('token');
             console.log(token);
-            fetch('http://localhost:8080/usuario/funcionarios', {
+            fetch('http://localhost:8080/usuario/cultivos', {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
@@ -11,24 +11,25 @@ function fetchAndCreateCard() {
       .then(response => {return response.json();})
       .then(data => {
         console.log(data);
-        for (let Pessoa of data){
-            console.log(Pessoa);
+        for (let Cultivo of data){
+            console.log(Cultivo);
             var newCard = document.createElement('div');
             newCard.classList.add('card');
       
             newCard.innerHTML = `
-                  <img src="../img/BannerUsuario.jpg" alt="ImagemCard">
+                  <img src="../img/BannerCultivo.jpg" alt="ImagemCard">
                   <div class="card-content">
-                      <h2>Usuário: ${Pessoa?.nome}</h2>
-                      <p>Nome Completo: ${Pessoa?.nome}</p>
-                      <p>Cargo: ${Pessoa?.cargo}</p>
-                      <p>Salário: ${Pessoa?.salario}</p>
-                      <p>Data De Contratação: ${Pessoa?.dataContratacao}</p>
+                      <h2>${Cultivo?.nome}</h2>
+                      <p>Descrição de Cultivo: ${Cultivo?.descricao}</p>
+                      <p>Data de Plantio: ${Cultivo?.dataDePlantio}</p>
+                      <p>Data de Colheita: ${Cultivo?.dataColheita}</p>
+                      <p>Data de Colheita Prevista: ${Cultivo?.dataColheitaPrevista}</p>
+                      <p>Quantidade Colhida: ${Cultivo?.quantidadeColhida} ${Cultivo?.nome}</p>
                   </div>
             `;
       
-            var text2Div = document.getElementById('text2');
-            text2Div.appendChild(newCard);
+            var text6Div = document.getElementById('text6');
+            text6Div.appendChild(newCard);
         }
         console.log(data);
       })

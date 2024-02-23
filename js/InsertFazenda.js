@@ -11,11 +11,12 @@ function fetchAndCreateCard() {
       .then(response => {return response.json();})
       .then(data => {
         console.log(data[0])
-        // Criar um novo elemento de card
+        if (data[0]?.id){
+          localStorage.setItem("fazendaId", data[0]?.id)
+        }
         var newCard = document.createElement('div');
         newCard.classList.add('card');
   
-        // Preencher o conteúdo do card com os dados recebidos
         newCard.innerHTML = `
         <img src="../img/BannerFazenda.jpg" alt="ImagemCard">
         <div class="card-content">
@@ -28,9 +29,8 @@ function fetchAndCreateCard() {
         </div>
         `;
   
-        // Inserir o novo card dentro da div com id "text1"
         var text1Div = document.getElementById('text1');
-        text1Div.innerHTML = ''; // Limpar qualquer conteúdo anterior
+        text1Div.innerHTML = '';
         text1Div.appendChild(newCard);
 
         let html= `
@@ -39,7 +39,7 @@ function fetchAndCreateCard() {
 
         var FazendaNome = document.getElementById('NomeFazenda');
         console.log(FazendaNome)
-        FazendaNome.innerHTML = html; // Limpar qualquer conteúdo anterior
+        FazendaNome.innerHTML = html;
 
         let user= `
         <h3>${data[0]?.usuario?.nome}</h3>
@@ -47,7 +47,7 @@ function fetchAndCreateCard() {
 
         var UserNome = document.getElementById('userInfo');
         console.log(UserNome)
-        UserNome.innerHTML = user; // Limpar qualquer conteúdo anterior
+        UserNome.innerHTML = user;
 
         const cityName = document.querySelector('#city_name')
         cityName.value=`${data[0]?.endereco?.cidade}`
@@ -56,7 +56,6 @@ function fetchAndCreateCard() {
       .catch(error => console.error('Erro:', error));
   }
   
-  // Chamar a função fetchAndCreateCard quando necessário (por exemplo, quando o botão "Próximo" for clicado)
     fetchAndCreateCard();
 
 

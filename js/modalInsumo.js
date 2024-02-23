@@ -16,12 +16,14 @@ function openModalInsumo() {
             var role = document.getElementById("role").value;
             var quantidadeDisponivel = document.getElementById("quantidadeDisponivel").value;
             var precoUnitario = document.getElementById("precoUnitario").value;
+            var fazendaId = localStorage.getItem("fazendaId");
 
             var formData = {
               nome: nome,
-              role: role,
+              tipo: role,
               quantidadeDisponivel: parseInt(quantidadeDisponivel),
-              precoUnitario: parseInt(precoUnitario)
+              precoUnitario: parseInt(precoUnitario),
+              fazendaId: fazendaId
             };
 
             var token = localStorage.getItem('token');

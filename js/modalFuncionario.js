@@ -17,12 +17,14 @@ function openModalFuncionario() {
             var cargo = document.getElementById("cargo").value;
             var salario = document.getElementById("salario").value;
             var dataContratacao = document.getElementById("dataContratacao").value;
+            var fazendaId = localStorage.getItem("fazendaId");
 
             var formData = {
               nome: nome,
               cargo: cargo,
               salario: salario,
-              dataContratacao: dataContratacao
+              dataContratacao: dataContratacao,
+              fazendaId: fazendaId
             };
 
             var token = localStorage.getItem('token');

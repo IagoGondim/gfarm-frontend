@@ -18,12 +18,14 @@
   <form id="registerForm">
     <label for="nome">Nome:</label><br>
     <input type="text" id="nome" name="nome" required><br>
+    <label for="role">Escolha o Tipo:</label>
+      <select id="role" name="role">
+        <option value="Aclive">Aclive</option>
+        <option value="Plano">Plano</option>
+        <option value="Declive">Declive</option>
+      </select><br><br>
     <label for="areaTotalLote">Área Total do Lote:</label><br>
-    <input type="number" id="areaTotalLote" name="areaTotalLote" required><br>
-    <label for="tipoDeSolo">Tipo de Solo:</label><br>
-    <input type="text" id="tipoDeSolo" name="tipoDeSolo" required><br>
-    <label for="fazendaId">ID da Fazenda:</label><br>
-    <input type="number" id="fazendaId" name="fazendaId" required><br><br>
+    <input type="number" id="areaTotalLote" name="areaTotalLote" placeholder="Metros Quadrados" required><br><br>
     <button type="submit">Inserir</button>
   </form>
 </div>

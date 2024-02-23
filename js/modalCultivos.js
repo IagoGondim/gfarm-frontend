@@ -13,19 +13,27 @@ function openModalCultivo() {
             event.preventDefault();
 
             var nome = document.getElementById("nome").value;
+            var descricao = document.getElementById("descricao").value;
             var dataDePlantio = document.getElementById("dataDePlantio").value;
             var dataColheitaPrevista = document.getElementById("dataColheitaPrevista").value;
+            var dataColheita = document.getElementById("dataColheita").value;
+            var quantidadeColhida = document.getElementById("quantidadeColhida").value;
+            var loteId = localStorage.getItem("loteId");
 
             var formData = {
                 nome: nome,
+                descricao: descricao,
                 dataDePlantio: dataDePlantio,
-                dataColheitaPrevista: dataColheitaPrevista
+                dataColheitaPrevista: dataColheitaPrevista,
+                dataColheita: dataColheita,
+                quantidadeColhida: quantidadeColhida,
+                loteId: loteId
     };
 
     var token = localStorage.getItem('token');
             console.log(formData);
             console.log(token);
-            fetch('http://localhost:8080/cultivos', {
+            fetch('http://localhost:8080/usuario/cultivos', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

@@ -14,14 +14,14 @@ function openModalLote() {
 
             var nome = document.getElementById("nome").value;
             var areaTotalLote = document.getElementById("areaTotalLote").value;
-            var tipoDeSolo = document.getElementById("tipoDeSolo").value;
-            var fazendaId = document.getElementById("fazendaId").value;
+            var role = document.getElementById("role").value;
+            var fazendaId = localStorage.getItem("fazendaId");
 
             var formData = {
                 nome: nome,
                 areaTotalLote: areaTotalLote,
-                tipoDeSolo: tipoDeSolo,
-                fazendaId: fazendaId,
+                tipoDeSolo: role,
+                fazendaId: fazendaId
     };
 
     var token = localStorage.getItem('token');
