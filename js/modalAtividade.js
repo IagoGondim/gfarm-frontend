@@ -51,6 +51,7 @@ function openModalAtividade() {
                 console.log('Atividade criada com sucesso:', data);
                 alert('Atividade criada com sucesso!');
                 closeModal();
+                location.reload();
               })
               .catch(error => {
                 console.error('Erro ao criar atividade:', error.message);

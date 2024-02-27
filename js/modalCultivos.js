@@ -51,6 +51,7 @@ function openModalCultivo() {
                 console.log('Cultivo inserido com sucesso:', data);
                 alert('Cultivo inserido com sucesso!');
                 closeModal();
+                location.reload();
               })
               .catch(error => {
                 console.error('Erro ao inserir cultivo:', error.message);

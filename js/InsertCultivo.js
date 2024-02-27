@@ -25,15 +25,43 @@ function fetchAndCreateCard() {
                       <p>Data de Colheita: ${Cultivo?.dataColheita}</p>
                       <p>Data de Colheita Prevista: ${Cultivo?.dataColheitaPrevista}</p>
                       <p>Quantidade Colhida: ${Cultivo?.quantidadeColhida} ${Cultivo?.nome}</p>
+                      <button class="delete-button-cultivo" data-cultivo-id="${Cultivo?.id}">Excluir Cultivo</button>
                   </div>
             `;
       
             var text6Div = document.getElementById('text6');
             text6Div.appendChild(newCard);
         }
+        var deleteButtons = document.querySelectorAll('.delete-button-cultivo');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                var cultivoId = button.getAttribute('data-cultivo-id');
+                deleteCultivo(cultivoId);
+            });
+        });
+        
         console.log(data);
-      })
-      .catch(error => console.error('Erro:', error));
-  }
+    })
+    .catch(error => console.error('Erro:', error));
+}
+
+function deleteCultivo(cultivoId) {
+    var token = localStorage.getItem('token');
+    fetch(`http://localhost:8080/usuario/cultivos/${cultivoId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao excluir Cultivo.');
+        }
+        alert('Cultivo Excluído com Sucesso!');
+        location.reload();
+    })
+    .catch(error => console.log('Erro ao excluir cultivo:', error.message));
+}
   
     fetchAndCreateCard();

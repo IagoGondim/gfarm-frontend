@@ -45,6 +45,7 @@ function openModalLote() {
                 console.log('Lote inserido com sucesso:', data);
                 alert('Lote inserido com sucesso!');
                 closeModal();
+                location.reload();
               })
               .catch(error => {
                 console.error('Erro ao inserir lote:', error.message);

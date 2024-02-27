@@ -48,6 +48,7 @@ function openModalFuncionario() {
                 console.log('Funcionario cadastrado com sucesso:', data);
                 alert('Funcionario cadastrado com sucesso!');
                 closeModal();
+                location.reload();
               })
               .catch(error => {
                 console.error('Erro ao cadastrar funcionario:', error.message);

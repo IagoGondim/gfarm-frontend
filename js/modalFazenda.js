@@ -51,6 +51,7 @@ function openModalFazenda() {
                 console.log('Fazenda cadastrada com sucesso:', data);
                 alert('Fazenda cadastrada com sucesso!');
                 closeModal();
+                location.reload();
               })
               .catch(error => {
                 console.error('Erro ao cadastrar fazenda:', error.message);

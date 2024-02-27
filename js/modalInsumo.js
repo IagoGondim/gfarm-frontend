@@ -47,6 +47,7 @@ function openModalInsumo() {
                 console.log('Insumo inserido com sucesso:', data);
                 alert('Insumo inserido com sucesso!');
                 closeModal();
+                location.reload();
               })
               .catch(error => {
                 console.error('Erro ao inserir insumo:', error.message);

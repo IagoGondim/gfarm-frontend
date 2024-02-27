@@ -45,6 +45,7 @@ function openModalEquipamento() {
                 console.log('Equipamento inserido com sucesso:', data);
                 alert('Equipamento inserido com sucesso!');
                 closeModal();
+                location.reload();
               })
               .catch(error => {
                 console.error('Erro ao inserir equipamento:', error.message);
